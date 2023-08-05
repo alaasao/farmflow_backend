@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-c9q-k_hxyayc(ql))t*^ef++b=+kwyxsk#@sn(6#tld)qfxg7_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercal.app']
 
 
 # Application definition
@@ -36,10 +36,15 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+ 
     'django.contrib.staticfiles',
     'rest_framework',
+    # 'knox',
     'rest_framework.authtoken',
     'accounts',
+    'profiles',
+    'products',
+
 ]
 
 MIDDLEWARE = [
