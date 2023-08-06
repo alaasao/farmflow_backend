@@ -4,7 +4,7 @@ from .serializers import *
 from rest_framework import viewsets,filters
 
 
-# Create your views here.
+
 class Viewsets_Profiles(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer

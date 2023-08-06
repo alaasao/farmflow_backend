@@ -42,3 +42,9 @@ def logout(request):
     print(user)
     Token.objects.get(user=user).delete()
     return Response({"user":"loged out succesfuly"})
+from .serializers import *
+from rest_framework import viewsets,filters
+class Viewsets_Users(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+

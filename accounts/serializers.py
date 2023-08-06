@@ -12,8 +12,8 @@ class UserSerializer(serializers.ModelSerializer):
         if User.objects.filter(email=value).exists():
             raise serializers.ValidationError("This email is already in use.")
         return value
-# class ProfileSerializer(serializers.ModelSerializer):
-#     class Meta(object):
-#         model=Profile
-#         fields ='__all__'
+class UserSerializer(serializers.ModelSerializer):
+    class Meta(object):
+        model=User
+        fields ='__all__'
         
