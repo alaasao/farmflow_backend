@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-c9q-k_hxyayc(ql))t*^ef++b=+kwyxsk#@sn(6#tld)qfxg7_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['hack-lac.vercel.app','127.0.0.1']
 
 
 # Application definition
@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
- 
+    'corsheaders',
     'django.contrib.staticfiles',
     'rest_framework',
     # 'knox',
@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -77,6 +78,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'body.wsgi.application'
 
+# CORS settings
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    # List of allowed origins (domains) that can access your API.
+    # For example, you can add 'http://localhost:3000' for development.
+    # Make sure to update this list with your actual allowed origins.
+    'http://localhost:3000',
+    'https://hack.baroud1.repl.co',
+]
+
+# Allow cookies to be sent along with cross-origin requests.
+CORS_ALLOW_CREDENTIALS = True
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
